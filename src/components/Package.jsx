@@ -24,7 +24,7 @@ const Package = () => {
                         <span><MdFoodBank></MdFoodBank> Food</span>
                         <span><FaMoneyCheckAlt ></FaMoneyCheckAlt> 100</span>
                     </Card.Footer>
-                    <Button variant="primary"> <Link to='/confirm' className='text-white text-decoration-none'>Book Now</Link> </Button>
+                    <Link to='/confirm' className='text-white text-decoration-none text-center bg-primary rounded'><Button> Book Now </Button></Link>
                 </Card>
                 <Card className="p-4">
                     <Card.Img variant="top" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8aG90ZWwlMjByb29tfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" />
@@ -40,7 +40,7 @@ const Package = () => {
                         <span><MdFoodBank></MdFoodBank> Food</span>
                         <span><FaMoneyCheckAlt ></FaMoneyCheckAlt> 500</span>
                     </Card.Footer>
-                    <Button variant="primary"> <Link to='/confirm' className='text-white text-decoration-none'>Book Now</Link> </Button>
+                    <Link to='/confirm' className='text-white text-decoration-none text-center bg-primary rounded'><Button> Book Now </Button></Link>
                 </Card>
                 <Card className="p-4">
                     <Card.Img variant="top" src="https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGhvdGVsJTIwcm9vbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" className='h-8' />
@@ -56,7 +56,7 @@ const Package = () => {
                         <span><MdFoodBank></MdFoodBank> Food</span>
                         <span><FaMoneyCheckAlt ></FaMoneyCheckAlt> 1000</span>
                     </Card.Footer>
-                    <Button variant="primary"> <Link to='/confirm' className='text-white text-decoration-none'>Book Now</Link> </Button>
+                    <Link to='/confirm' className='text-white text-decoration-none text-center bg-primary rounded'><Button> Book Now </Button></Link>
                 </Card>
             </CardGroup>
         </div>

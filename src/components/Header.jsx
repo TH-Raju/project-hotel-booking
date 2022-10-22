@@ -27,8 +27,8 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
 
                         <Nav>
-                            <Link to='/home' variant='light' className='text-white text-decoration-none'>Home</Link>
-                            <Link to='/package' variant='light' className='text-white text-decoration-none'>Package</Link>
+                            <Link to='/home' variant='light' className='text-white text-decoration-none p-3'>Home</Link>
+                            <Link to='/package' variant='light' className='text-white text-decoration-none p-3'>Package</Link>
                             <>
                                 {
                                     user?.uid ?
@@ -39,8 +39,8 @@ const Header = () => {
                                         </>
                                         :
                                         <>
-                                            <Link to='/login' variant='light' className='text-white text-decoration-none'>Log in</Link>
-                                            <Link to='/register' variant='light' className='text-white text-decoration-none'>Register</Link>
+                                            <Link to='/login' variant='light' className='text-white text-decoration-none p-3'>Log in</Link>
+                                            <Link to='/register' variant='light' className='text-white text-decoration-none p-3'>Register</Link>
                                         </>
                                 }
                             </>
