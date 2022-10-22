@@ -1,14 +1,13 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import toast from 'react-hot-toast';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const OrderConfirm = () => {
-    const onF = () => {
-        toast.success('Successfully toasted!')
-    }
+    const notify = () => toast("Wow so easy!");
     return (
         <div className='text-center p-4'>
-            <Button onClick={onF} variant="primary" type="submit">
+            <Button onClick={notify} variant="primary" type="submit">
                 Confirm Order
             </Button>
         </div>
