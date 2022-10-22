@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthProvider';
 
 const Login = () => {
+    const { user, signIn } = useContext(AuthContext);
+    const location = useLocation();
+
+    const navigates = useNavigate();
+    const from = location.state?.from?.pathname || '/';
 
     const handleOnSubmit = event => {
         event.preventDefault();
@@ -11,9 +18,24 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        console.log(email, password);
+
+        signIn(email, password)
+            .then(result => {
+
+                form.reset();
+            })
+            .catch(error => {
+                console.error(error);
+            })
+
+
     }
 
+    useEffect(() => {
+        if (user) {
+            navigates(from, { replace: true })
+        }
+    }, [user])
 
 
     return (
@@ -32,6 +54,7 @@ const Login = () => {
                 <Button variant="primary" type="submit">
                     Log in
                 </Button>
+
             </Form>
         </div>
     );

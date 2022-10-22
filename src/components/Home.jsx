@@ -1,6 +1,5 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import Package from './Package';
 
 const Home = () => {
     return (
@@ -17,7 +16,7 @@ const Home = () => {
                 </Carousel.Caption>
             </Carousel>
 
-            <Package></Package>
+
         </div>
     );
 };

@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../context/AuthProvider';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
+
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container className='d-flex space-around'>
@@ -17,10 +27,24 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
 
                         <Nav>
-                            <Nav.Link><Link to='/home' variant='light'>Home</Link></Nav.Link>
-                            <Nav.Link><Link to='/package' variant='light'>Package</Link></Nav.Link>
-                            <Nav.Link><Link to='/login' variant='light'>Log in</Link></Nav.Link>
-                            <Nav.Link><Link to='/register' variant='light'>Register</Link></Nav.Link>
+                            <Link to='/home' variant='light' className='text-white text-decoration-none'>Home</Link>
+                            <Link to='/package' variant='light' className='text-white text-decoration-none'>Package</Link>
+                            <>
+                                {
+                                    user?.uid ?
+                                        <>
+                                            <Button onClick={handleLogOut} className='m-2' variant="primary" type="submit">
+                                                Log out
+                                            </Button>
+                                        </>
+                                        :
+                                        <>
+                                            <Link to='/login' variant='light' className='text-white text-decoration-none'>Log in</Link>
+                                            <Link to='/register' variant='light' className='text-white text-decoration-none'>Register</Link>
+                                        </>
+                                }
+                            </>
+
 
                         </Nav>
                     </Navbar.Collapse>
@@ -32,3 +56,4 @@ const Header = () => {
 };
 
 export default Header;
+
