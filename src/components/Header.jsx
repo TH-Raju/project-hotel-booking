@@ -16,42 +16,44 @@ const Header = () => {
     }
 
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Container className='d-flex space-around'>
-                <div>
-                    <Navbar.Brand href="#home">Hotel-Rest</Navbar.Brand>
+        <div >
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+                <Container className='d-flex space-around'>
+                    <div>
+                        <Navbar.Brand href="#home">Hotel-Rest</Navbar.Brand>
 
-                </div>
-                <div>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
+                    </div>
+                    <div>
+                        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                        <Navbar.Collapse id="responsive-navbar-nav">
 
-                        <Nav>
-                            <Link to='/home' variant='light' className='text-white text-decoration-none p-3'>Home</Link>
-                            <Link to='/package' variant='light' className='text-white text-decoration-none p-3'>Package</Link>
-                            <>
-                                {
-                                    user?.uid ?
-                                        <>
-                                            <Button onClick={handleLogOut} className='m-2' variant="primary" type="submit">
-                                                Log out
-                                            </Button>
-                                        </>
-                                        :
-                                        <>
-                                            <Link to='/login' variant='light' className='text-white text-decoration-none p-3'>Log in</Link>
-                                            <Link to='/register' variant='light' className='text-white text-decoration-none p-3'>Register</Link>
-                                        </>
-                                }
-                            </>
+                            <Nav>
+                                <Link to='/home' variant='light' className='text-white text-decoration-none p-3'>Home</Link>
+                                <Link to='/package' variant='light' className='text-white text-decoration-none p-3'>Package</Link>
+                                <>
+                                    {
+                                        user?.uid ?
+                                            <>
+                                                <Button onClick={handleLogOut} className='m-2' variant="primary" type="submit">
+                                                    Log out
+                                                </Button>
+                                            </>
+                                            :
+                                            <>
+                                                <Link to='/login' variant='light' className='text-white text-decoration-none p-3'>Log in</Link>
+                                                <Link to='/register' variant='light' className='text-white text-decoration-none p-3'>Register</Link>
+                                            </>
+                                    }
+                                </>
 
 
-                        </Nav>
-                    </Navbar.Collapse>
+                            </Nav>
+                        </Navbar.Collapse>
 
-                </div>
-            </Container>
-        </Navbar>
+                    </div>
+                </Container>
+            </Navbar>
+        </div>
     );
 };
 
